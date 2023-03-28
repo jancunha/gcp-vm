@@ -1,5 +1,5 @@
-resource "google_compute_instance" "terra_instance" {
-  name = "terra-vm"
+resource "google_compute_instance" "webserver" {
+  name = "webserver1"
   zone = var.zone
   machine_type = "f1-micro"
 
@@ -16,5 +16,5 @@ resource "google_compute_instance" "terra_instance" {
       #nat_ip = google_compute_address.static.address
     }
   }
-  metadata_startup_script = "sudo apt-get update && sudo apt-get install apache2 unzip -y"
+  metadata_startup_script = "sudo apt update && sudo apt install apache2 unzip -y"
 }
