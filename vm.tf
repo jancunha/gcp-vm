@@ -1,6 +1,6 @@
 resource "google_compute_instance" "webserver" {
-  name = "webserver1"
-  zone = var.zone
+  name         = "webserver1"
+  zone         = var.zone
   machine_type = "f1-micro"
 
   boot_disk {
@@ -9,7 +9,7 @@ resource "google_compute_instance" "webserver" {
     }
   }
   network_interface {
-    network = google_compute_network.terra_vpc.name
+    network    = google_compute_network.terra_vpc.name
     subnetwork = google_compute_subnetwork.terra_sub.name
     access_config {
       //Ephemeral IP
